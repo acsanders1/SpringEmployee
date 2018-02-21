@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--
+	<bean id="employeeDao" class="beans.EmployeeDaoInMemoryImpl">
+	</bean>
+	-->
+	<bean id="servicePay" class="beans.ServicePayImpl">
+		<constructor-arg ref="employeeDao" />
+	</bean>
+	  
+	<bean id= "employee1" class= "beans.Employee">
+		<property name="employeeId" value="1" />
+		<property name="employeeName" value= "Jack" />
+		<property name="payRate" value= "10.00" />
+		<property name="productive" value= "true" />
+	</bean>
+	<bean id= "employee2" class= "beans.Employee">
+		<property name="employeeId" value="2" />
+		<property name="employeeName" value= "Katie" />
+		<property name="payRate" value= "7.25" />
+		<property name="productive" value= "false" />
+	</bean>
+	<bean id= "employee3" class= "beans.Employee">
+		<property name="employeeId" value="3" />
+		<property name="employeeName" value= "Neil" />
+		<property name="payRate" value= "11.50" />
+		<property name="productive" value= "true" />
+	</bean>
+	<bean id= "employee4" class= "beans.Employee">
+		<property name="employeeId" value="4" />
+		<property name="employeeName" value= "Shelby" />
+		<property name="payRate" value= "8.00" />
+		<property name="productive" value= "false" />
+	</bean>
+	<bean id= "employee5" class= "beans.Employee">
+		<property name="employeeId" value="5" />
+		<property name="employeeName" value= "Alex" />
+		<property name="payRate" value= "9.00" />
+		<property name="productive" value= "true" />
+	</bean>
+	<bean id= "employee6" class= "beans.Employee">
+		<property name="employeeId" value="6" />
+		<property name="employeeName" value= "Steph" />
+		<property name="payRate" value= "12.75" />
+		<property name="productive" value= "true" />
+	</bean>
+	<bean id= "employeeDao" class="beans.EmployeeDaoInMemoryImpl">
+		<property name="employeesMap">
+		<map>
+		<entry key="1" value-ref="employee1" />
+		<entry key="2" value-ref="employee2" />
+		<entry key="3" value-ref="employee3" />
+		<entry key="4" value-ref="employee4" />
+		<entry key="5" value-ref="employee5" />
+		<entry key="6" value-ref="employee6" />
+		</map>
+		</property>
+	</bean>
+	
+</beans>
